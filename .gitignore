@@ -42,6 +42,7 @@ vendor/bundle
 
 # Cache #
 #########
+.cache
 .sass-cache
 
 # Generated CSS #
@@ -49,3 +50,7 @@ vendor/bundle
 user/media/theme/*/media/css
 *.css
 *.map
+
+# NPM #
+#######
+node_modules

@@ -1,0 +1,27 @@
+{
+  "name": "s3-template",
+  "description": "s3-template",
+  "version": "0.0.1",
+  "homepage": "https://github.com/natrin/s3-template",
+  "author": {
+    "name": "Sho Sakakibara",
+    "email": "sakakibara@ritaworks.jp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natrin/s3-template.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-convert-encoding": "^1.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^1.2.2",
+    "vinyl-ftp": "^0.6.0"
+  }
+}
