@@ -10,7 +10,9 @@ var sassGlob = require('gulp-sass-glob');
 var browserSync = require('browser-sync').create();
 var vinylFtp = require('vinyl-ftp');
 var config = JSON.parse(fs.readFileSync('./config.json'));
-var cacheContent = fs.readFileSync('.cache', 'utf8');
+if (fs.existsSync('.cache')) {
+    var cacheContent = fs.readFileSync('.cache', 'utf8');
+}
 var paths = {
   css: 'user/theme/' + config.theme + '/media/css'
 };
