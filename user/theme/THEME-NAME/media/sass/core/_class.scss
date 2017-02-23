@@ -6,6 +6,9 @@
 // 行揃え指定クラス
 @include textalign();
 
+// フォントサイズクラス作成
+@include fontsize();
+
 // クリアフィックス
 .clearfix {
   @include clearfix;
@@ -60,13 +63,6 @@
   margin-right: auto !important;
 }
 
-// フォントサイズクラスの生成
-@for $i from 8 through 40 {
-  .f#{$i}px {
-    font-size: #{$i}px !important;
-  }
-}
-
 // フォント太さクラス
 .normal {
   font-weight: normal;
@@ -84,11 +80,7 @@
     @include spaceloop(-tb);
 
     // タブレット用フォントサイズクラスの生成
-    @for $i from 8 through 40 {
-      .f#{$i}px-tb {
-        font-size: #{$i}px !important;
-      }
-    }
+    @include fontsize(-tb);
   }
 
   @media (max-width: $screen-sp) {
@@ -99,11 +91,7 @@
     @include spaceloop(-sp);
 
     // スマホ用フォントサイズクラスの生成
-    @for $i from 8 through 40 {
-      .f#{$i}px-sp {
-        font-size: #{$i}px !important;
-      }
-    }
+    @include fontsize(-sp)
   }
 
   // デバイスごとのディスプレイ指定クラス
