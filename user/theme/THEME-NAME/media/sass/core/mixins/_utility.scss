@@ -51,6 +51,15 @@ $align: left, right, center;
   }
 }
 
+// フォントサイズクラスの生成
+@mixin fontsize($sufix: "") {
+  @for $i from 8 through 40 {
+    .f#{$i}px#{$sufix} {
+      font-size: #{$i}px !important;
+    }
+  }
+}
+
 // グラデーション生成
 @mixin gradient($start-color, $end-color, $orientation)
 {
