@@ -24,3 +24,10 @@ a:hover {
     }
   }
 }
+
+@if ($link-underline) {
+  $link-underline: false;
+  @include link;
+} else {
+  @include link;
+}

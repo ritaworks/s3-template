@@ -1,4 +1,4 @@
-.button01 {
+@mixin button01 {
   background-color: #ddd;
   border: none;
   border-bottom: 2px solid #000;
@@ -15,9 +15,8 @@
   text-align: center;
   text-decoration: none;
   vertical-align: bottom;
-}
-
-.button01:hover {
-  border-bottom: none;
-  margin-top: 2px;
+  &:hover {
+    border-bottom: none;
+    margin-top: 2px;
+  }
 }
