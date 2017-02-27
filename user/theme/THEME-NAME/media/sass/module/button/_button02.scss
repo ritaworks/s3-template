@@ -1,4 +1,4 @@
-.button01 {
+@mixin button02 {
   position: relative;
   display: inline-block;
   width: 240px;
@@ -7,26 +7,26 @@
   line-height: 45px;
   text-decoration: none;
   transition: all .3s;
-}
-.button01::after {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  display: block;
-  content: '';
-  width: 8px;
-  height: 8px;
-  margin-top: -6px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  transition: all .3s;
-}
-.button01:hover {
-  background: #000;
-  color: #fff;
-}
-.button01:hover:after {
-  border-color: #fff;
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-top: -6px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .3s;
+  }
+  &:hover {
+    background: #000;
+    color: #fff;
+    &:after {
+      border-color: #fff;
+    }
+  }
 }
