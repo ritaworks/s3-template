@@ -98,3 +98,19 @@ $align: left, right, center;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
   }
 }
+
+// リンクテキストのクラスの生成
+@mixin link() {
+  @if $link-underline {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @else {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
