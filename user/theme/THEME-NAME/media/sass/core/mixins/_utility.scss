@@ -98,3 +98,14 @@ $align: left, right, center;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
   }
 }
+
+// lineheightクラスの生成
+@mixin lineheight($sufix: "") {
+  $i: 10;
+  @while $i <= 20 {
+    .lh#{$i}#{$sufix} {
+      line-height: #{$i * 0.1} !important;
+    }
+    $i: $i + 1;
+  }
+}
