@@ -9,6 +9,9 @@
 // フォントサイズクラス作成
 @include fontsize();
 
+// lineheightのクラス
+@include lineheight();
+
 // クリアフィックス
 .clearfix {
   @include clearfix;
@@ -81,6 +84,9 @@
 
     // タブレット用フォントサイズクラスの生成
     @include fontsize(-tb);
+
+    // タブレット用lineheightのクラス
+    @include lineheight(-tb);
   }
 
   @media (max-width: $screen-sp) {
@@ -92,6 +98,9 @@
 
     // スマホ用フォントサイズクラスの生成
     @include fontsize(-sp)
+
+    // スマホ用lineheightのクラス
+    @include lineheight(-sp);
   }
 
   // デバイスごとのディスプレイ指定クラス
