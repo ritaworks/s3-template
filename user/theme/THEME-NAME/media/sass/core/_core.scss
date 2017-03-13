@@ -100,17 +100,37 @@ hr {
   height: 0;
 }
 
-button,
-input,
-select,
-textarea {
+select {
   color: inherit;
   font: inherit;
   margin: 0;
 }
 
-button {
+button,
+input,
+textarea {
+  -webkit-appearance: none;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 4px 6px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  outline:none;
+}
+
+input[type="button"],
+input[type="submit"] {
+  border:none;
+}
+
+button {  
   overflow: visible;
+  background-color: transparent;
+  border-radius:0;
 }
 
 button,
