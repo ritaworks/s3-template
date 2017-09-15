@@ -1,19 +1,90 @@
 #!/bin/bash
 
-echo "案件名とテーマ名を設定します。"
+function main(){
+  echo "案件名とテーマ名を設定します。"
 
-BASEDIR="${0%/*}"
+  # ローカル変数として宣言
+  local basedir name origin theme targets=()
 
-echo -n "案件名を日本語で入力して[RETURN]キーを押して下さい: "
-read name
-echo -n "テーマ名を半角英数字で入力して[RETURN]キーを押して下さい: "
-read theme
+  basedir="${0%/*}" targets=("media" "theme")
 
-find $BASEDIR -name '*.php' -type f -exec sed -i "" "s/案件名/$name/g" {} \;
-find $BASEDIR \( -name "*.html" -or -name "*.css" -or -name "*.scss" \) -exec sed -i "" "s/THEME-NAME/$theme/g" {} \;
-mv $BASEDIR/user/media/* "$BASEDIR/user/media/$theme/"
-mv $BASEDIR/user/theme/* "$BASEDIR/user/theme/$theme/"
+  echo -n "案件名を日本語で入力して[RETURN]キーを押して下さい: "
+  read name
+  echo -n "テーマ名を半角英数字で入力して[RETURN]キーを押して下さい: "
+  read theme
 
-find $BASEDIR -name '*.keep' | xargs rm
+  # cdできなければexit status 1で終了
+  cd $basedir || exit 1
 
-read -p "完了しました。スクリプトを終了するには[RETURN]キーを押して下さい。"
+  replace "$name" "$theme" "${targets[@]}"
+
+  move "$theme" "${targets[@]}"
+
+  find . -name "*.keep" | xargs rm
+
+  read -p "完了しました。スクリプトを終了するには[RETURN]キーを押して下さい。"
+}
+
+function replace() {
+  # ローカル変数として宣言
+  local name theme
+
+  name=$1; shift
+  theme=$1; shift
+
+  find . -name "*.php" -type f -exec sed -i "" "s:\('theme_title' => '\).*\(',\):\1$name\2:g" '{}' \;
+  find . -name "*.php" -type f -exec sed -i "" "s:\('theme_desc' => '\).*\(のテーマです。',\):\1$name\2:g" '{}' \;
+  for target; do
+    find . \( -name "*.html" -or -name "*.css" -or -name "*.scss" \) -exec sed -i "" "s:\(user/$target/\)[^/]*\(/\):\1$theme\2:g" '{}' \;
+  done
+}
+
+function move() {
+  # ローカル変数として宣言
+  local base origin theme dirs=()
+
+  theme=$1; shift
+
+  for target; do
+    base="user/$target"
+    dirs=()
+    while IFS= read -r -d $'\0' dir; do
+      dirs+=("${dir##*/}")
+    done < <(find "$base" -mindepth "1" -maxdepth "1" -type d -print0)
+
+    if [[ "${#dirs[@]}" -eq 1 ]]; then
+      # $originが定義されていない、
+      # もしくは定義されている名称のフォルダが存在しない場合実行する
+      if [[ -z "$origin" ]] || [[ -n "$origin" && ! -d "$base/$origin" ]]; then
+        unset origin
+        if [[ -d "$base/THEME-NAME" ]]; then
+          origin="THEME-NAME"
+        fi
+      fi
+    fi
+
+    if [[ -z "$origin" ]]; then
+      PS3="移動するフォルダを数字で指定してください:"
+
+      select dir in "${dirs[@]}" "移動しない"; do
+        case "$dir" in
+          "移動しない")
+            echo "フォルダ移動をキャンセルしました。"
+            break
+            ;;
+          *)
+            origin="$dir"
+            break
+            ;;
+        esac
+      done
+    fi
+
+    mkdir -p "$base/$theme"
+    find "$base/$origin" -mindepth "1" -prune -exec mv '{}' "$base/$theme" \;
+    rmdir "$base/$origin"
+  done
+}
+
+# mainが正常に走らなければexit status 1で終了
+main "$@" || exit 1
