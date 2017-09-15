@@ -4,7 +4,7 @@ function main(){
   echo "案件名とテーマ名を設定します。"
 
   # ローカル変数として宣言
-  local basedir name origin theme targets=()
+  local basedir name theme targets=()
 
   basedir="${0%/*}" targets=("media" "theme")
 
@@ -14,7 +14,7 @@ function main(){
   read theme
 
   # cdできなければexit status 1で終了
-  cd $basedir || exit 1
+  cd "$basedir" || exit 1
 
   replace "$name" "$theme" "${targets[@]}"
 
