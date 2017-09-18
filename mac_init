@@ -50,12 +50,14 @@ function move() {
     dirs=()
     while IFS= read -r -d $'\0' dir; do
       dirs+=("${dir##*/}")
-    done < <(find "$base" -mindepth "1" -maxdepth "1" -type d -print0)
+    done < <(find "$base" -mindepth "1" -maxdepth "1" -type d -print0 2>/dev/null)
 
-    if [[ "${#dirs[@]}" -eq 1 ]]; then
+    if [[ "${#dirs[@]}" -eq 0 ]]; then
+      echo -e "[!] $base フォルダ内にテーマフォルダが存在していません。" && continue
+    elif [[ "${#dirs[@]}" -eq 1 ]]; then
       # $originが定義されていない、
       # もしくは定義されている名称のフォルダが存在しない場合実行する
-      if [[ -z "$origin" ]] || [[ -n "$origin" && ! -d "$base/$origin" ]]; then
+      if [[ -z "$origin" || ! -d "$base/$origin" ]]; then
         unset origin
         if [[ -d "$base/THEME-NAME" ]]; then
           origin="THEME-NAME"
@@ -63,8 +65,8 @@ function move() {
       fi
     fi
 
-    if [[ -z "$origin" ]]; then
-      PS3="移動するフォルダを数字で指定してください:"
+    if [[ -z "$origin" || ! -d "$base/$origin" ]]; then
+      PS3="移動するフォルダを数字で指定してください: "
 
       select dir in "${dirs[@]}" "移動しない"; do
         case "$dir" in
@@ -80,9 +82,8 @@ function move() {
       done
     fi
 
-    mkdir -p "$base/$theme"
-    find "$base/$origin" -mindepth "1" -prune -exec mv '{}' "$base/$theme" \;
-    rmdir "$base/$origin"
+    [[ -d "$base/$theme" ]] || mkdir -p "$base/$theme"
+    find "$base/$origin" -mindepth "1" -prune -exec mv '{}' "$base/$theme" \; && rmdir "$base/$origin"
   done
 }
 
