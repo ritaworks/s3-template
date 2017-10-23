@@ -86,3 +86,41 @@ $(function () {
     }
   });
 });
+
+//ヘッダー固定時別ページからのアンカーリンクの時ヘッダー分ずれない
+$(function () {
+  $('a[href^="#"]').click(function () {
+    if ($(this).parents().parents('ul').hasClass('tab-btn') == true) {
+      return true;
+    }
+    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
+    scrollPosition(position);
+    return false;
+  });
+  $('a[href*=".html#"]').on('click', function(){
+    if ($(this).parents().parents('ul').hasClass('slidemenu-list') == true && window.location.pathname == $(this)[0].pathname) {
+      //location.reload();
+      $('body').removeClass('open');
+      var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
+      if ($(window).width() < SP_WIDTH) {
+        position -= SP_FIXED ? $('header').height() : 0;
+      }
+      $('html, body').animate({
+        scrollTop: position
+      }, 1);
+      return false;
+    }
+  })
+});
+
+//ヘッダーが固定の時スマホの時のページ内リンク用
+$(function () {
+  $(document).on('ready', function() {
+    if ($(window).width() < SP_WIDTH) {
+    if (location.hash != "") {
+      var pos = $(location.hash).offset().top;
+      pos -= $('header').height();
+      $("html, body").animate({ scrollTop: pos }, 1, "swing");
+    }}
+  });
+});
