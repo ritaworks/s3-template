@@ -147,6 +147,11 @@ $align-items: (
         display: none !important;
     }
   }
+  .pctb {
+    @media (max-width: $screen-sp) {
+        display: none !important;
+    }
+  }
   .tb {
     @media (min-width: $screen-pc-min) {
       display: none !important;
