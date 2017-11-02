@@ -60,6 +60,9 @@ $align: left, right, center;
   }
 }
 
+
+
+
 // グラデーション生成
 @mixin gradient($start-color, $end-color, $orientation)
 {
@@ -121,6 +124,17 @@ $align: left, right, center;
   @while $i <= 20 {
     .lh#{$i}#{$sufix} {
       line-height: #{$i * 0.1} !important;
+    }
+    $i: $i + 1;
+  }
+}
+
+// letterspacingクラスの生成
+@mixin letterspacing($sufix: "") {
+  $i: 20;
+  @while $i <= 100 {
+    .ls#{$i}#{$sufix} {
+      letter-spacing: #{$i * 0.001}em !important;
     }
     $i: $i + 1;
   }
