@@ -115,6 +115,26 @@ $align-items: (
   font-weight: bold;
 }
 
+//Webフォント用weight
+.thin {
+  font-weight: 100;
+}
+.light {
+  font-weight: 300;
+}
+.demilight {
+  font-weight: 350;
+}
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.black {
+  font-weight: 900;
+}
+
 @if $responsive {
   @media (max-width: $screen-tb) {
     // 行揃え指定クラス
