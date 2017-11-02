@@ -60,6 +60,17 @@ $align: left, right, center;
   }
 }
 
+// フォントウェイトクラスの生成
+@mixin fontweight($sufix: "") {
+  $i: 100;
+  @while $i <= 900 {
+      .fw#{$i}#{$sufix} {
+        font-weight: #{$i} !important;
+      }
+      $i: $i + 100;
+  }
+}
+
 // グラデーション生成
 @mixin gradient($start-color, $end-color, $orientation)
 {
