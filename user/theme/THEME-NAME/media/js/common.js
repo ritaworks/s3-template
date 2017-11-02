@@ -86,3 +86,15 @@ $(function () {
     }
   });
 });
+
+//ヘッダーが固定の時スマホの時のページ内リンク用
+$(function () {
+  $(document).on('ready', function() {
+    if ($(window).width() < SP_WIDTH) {
+    if (location.hash != "") {
+      var pos = $(location.hash).offset().top;
+      pos -= $('header').height();
+      $("html, body").animate({ scrollTop: pos }, 1, "swing");
+    }}
+  });
+});
