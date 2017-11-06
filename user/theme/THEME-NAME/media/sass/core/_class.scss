@@ -37,6 +37,9 @@ $align-items: (
 // letterspacingのクラス
 @include letterspacing();
 
+// font-weightのクラス
+@include fontweight();
+
 // リンクテキストクラス作成
 .link {
   @if $link-underline {
