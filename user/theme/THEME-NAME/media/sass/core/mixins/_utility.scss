@@ -127,7 +127,7 @@ $align: left, right, center;
 // lineheightクラスの生成
 @mixin lineheight($sufix: "") {
   $i: 10;
-  @while $i <= 20 {
+  @while $i <= 30 {
     .lh#{$i}#{$sufix} {
       line-height: #{$i * 0.1} !important;
     }
