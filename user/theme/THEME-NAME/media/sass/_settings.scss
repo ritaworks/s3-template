@@ -7,10 +7,14 @@
 $responsive: true;
 
 // ヘッダー固定かどうかの設定 - true/false
-$header-fixed: true;
+$header-fixed-sp: true;
+$header-fixed-pc: true;
+
+// pcのヘッダーの高さ(必須)
+$header-height-pc: 100px;
 
 // スマホのヘッダーの高さ(必須)
-$header-height: 60px;
+$header-height-sp: 60px;
 
 // LightCMS導入サイトかどうかの設定 - true/false
 $light-cms: true;
