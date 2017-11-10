@@ -7,7 +7,8 @@
 $responsive: true;
 
 // ヘッダー固定かどうかの設定 - true/false
-$header-fixed: true;
+// trueの場合はcommon.jsの「SP_FIXED」も変更する
+$header-fixed: false;
 
 // スマホのヘッダーの高さ(必須)
 $header-height: 60px;
