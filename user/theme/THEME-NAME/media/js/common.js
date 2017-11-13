@@ -69,9 +69,11 @@ $(function () {
   var menu_open = false;
 
   menu_btn.on('click', function () {
+    console.log($(window).scrollTop());
     if (!menu_open) {
-      top = body.scrollTop();
+      top = $(window).scrollTop();
     }
+    console.log(top);
     body.toggleClass('open');
     menu_btn.toggleClass('active');
     menu_open = true;
@@ -81,7 +83,8 @@ $(function () {
         'top': -top
       });
     } else {
-      body.removeAttr('style').scrollTop(top);
+      body.removeAttr('style');
+      $(window).scrollTop(top);
       menu_open = false;
     }
   });
