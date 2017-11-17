@@ -93,6 +93,8 @@ $align-items: (
 .fade {
   transition: opacity 0.2s;
   opacity: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   &:hover {
     opacity: 0.7;
   }
