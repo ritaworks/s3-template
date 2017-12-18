@@ -121,7 +121,7 @@ $align-items: (
 }
 
 @if $responsive {
-  @media (max-width: $screen-tb) {
+  @media only screen and (max-width: $screen-tb) {
     // 行揃え指定クラス
     @include textalign(-tb);
 
@@ -133,12 +133,12 @@ $align-items: (
 
     // タブレット用lineheightのクラス
     @include lineheight(-tb);
-    
+
     // タブレット用letterspacingのクラス
     @include letterspacing(-tb);
   }
 
-  @media (max-width: $screen-sp) {
+  @media only screen and (max-width: $screen-sp) {
     // 行揃え指定クラス
     @include textalign(-sp);
 
@@ -150,29 +150,29 @@ $align-items: (
 
     // スマホ用lineheightのクラス
     @include lineheight(-sp);
-    
+
     // スマホ用letterspacingのクラス
     @include letterspacing(-sp);
   }
 
   // デバイスごとのディスプレイ指定クラス
   .pc {
-    @media (max-width: $screen-tb) {
+    @media only screen and (max-width: $screen-tb) {
         display: none !important;
     }
   }
   .pctb {
-    @media (max-width: $screen-sp) {
+    @media only screen and (max-width: $screen-sp) {
         display: none !important;
     }
   }
   .tb {
-    @media (min-width: $screen-pc-min) {
+    @media only screen and (min-width: $screen-pc-min) {
       display: none !important;
     }
   }
   .sp {
-    @media (min-width: $screen-tb-min) {
+    @media only screen and (min-width: $screen-tb-min) {
       display: none !important;
     }
   }

@@ -19,7 +19,7 @@ a {
 }
 
 @if $responsive {
-  @media (max-width: $screen-tb) {
+  @media only screen and (max-width: $screen-tb) {
     body {
       font-size: $base-font-size-tb;
     }
