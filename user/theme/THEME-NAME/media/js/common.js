@@ -1,4 +1,4 @@
-var PC_FIXED = true;
+var PC_FIXED = false;
 var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
