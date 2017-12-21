@@ -9,16 +9,16 @@
 // Header
 // --------------------------------------------------
 header {
-	top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    @if $header-fixed-pc {
-      position: fixed;
-    }
-    @else {
-      position: relative;
-    }
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  @if $header-fixed-pc {
+    position: fixed;
+  }
+  @else {
+    position: relative;
+  }
   @media screen and (max-width: $screen-tb) {
     top: 0;
     left: 0;
