@@ -31,13 +31,16 @@ body {
     height: 100%;
     overflow: hidden;
   }
-  @if $header_fixed-pc {
+  @if $header-fixed-pc {
     padding-top: $header-height-pc;
   }
   @media screen and (max-width: 768px) {
-    @if $header_fixed-sp {
+    @if $header-fixed-sp {
       position: relative;
       padding-top: $header-height-sp;
+    }
+    @else {
+      padding-top: 0;
     }
   }
 }
