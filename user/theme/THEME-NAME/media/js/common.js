@@ -1,3 +1,4 @@
+var PC_FIXED = false;
 var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
@@ -11,9 +12,7 @@ var isiPhone = (UA.indexOf('iphone') > -1);
 var isAndroid = (UA.indexOf('android') > -1) && (UA.indexOf('mobile') > -1);
 
 function scrollPosition(position) {
-  if ($(window).width() < SP_WIDTH) {
-    position -= SP_FIXED ? $('header').height() : 0;
-  }
+    position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? $('header').innerHeight() : 0;
   $('html, body').animate({
     scrollTop: position
   }, SPEED);
@@ -93,11 +92,12 @@ $(function () {
 //ヘッダーが固定の時スマホの時のページ内リンク用
 $(function () {
   $(document).on('ready', function() {
-    if ($(window).width() < SP_WIDTH) {
     if (location.hash != "") {
-      var pos = $(location.hash).offset().top;
-      pos -= $('header').height();
+	  var pos = $(location.hash).offset().top;
+	  if (PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH) {
+		pos -= $('header').innerHeight();  
+	  }
       $("html, body").animate({ scrollTop: pos }, 1, "swing");
-    }}
+    }
   });
 });

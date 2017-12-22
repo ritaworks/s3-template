@@ -31,16 +31,22 @@ body {
     height: 100%;
     overflow: hidden;
   }
+  @if $header-fixed-pc {
+    padding-top: $header-height-pc;
+  }
   @media screen and (max-width: 768px) {
-    @if $header_fixed {
+    @if $header-fixed-sp {
       position: relative;
-      padding-top: $header-height;
+      padding-top: $header-height-sp;
+    }
+    @else {
+      padding-top: 0;
     }
   }
 }
 .slide-menu {
   position: fixed;
-  padding-top: $header-height;
+  padding-top: $header-height-sp;
   top: 0;
   left: 100%;
   width: 100%;
