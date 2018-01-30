@@ -1,21 +1,21 @@
 # s3-template
 
 ## 設計思想
-メンテナンス性を高める  
-拡張しやすいように  
-初めて触る人でもすぐ理解出来るように  
-案件によって柔軟に切り替えられるように（非レスポンシブ、静的サイト等）  
-問題が起きる前に問題を想定して作成する  
-理解していないコードは闇雲に追加せず、理解している（できる）もののみ追加する  
+メンテナンス性を高める
+拡張しやすいように
+初めて触る人でもすぐ理解出来るように
+案件によって柔軟に切り替えられるように（非レスポンシブ、静的サイト等）
+問題が起きる前に問題を想定して作成する
+理解していないコードは闇雲に追加せず、理解している（できる）もののみ追加する
 
 
 ## CSS設計
-RSCSSを参考  
-http://rscss.io/  
+RSCSSを参考
+http://rscss.io/
 https://github.com/rstacruz/rscss
 
-Sass導入を念頭に置いた構成  
-http://developers.linecorp.com/blog/?p=1027  
+Sass導入を念頭に置いた構成
+http://developers.linecorp.com/blog/?p=1027
 
 
 ## 対応ブラウザ
@@ -68,6 +68,7 @@ s3-template/
 │                   │   ├── _core.scss [no-edit]
 │                   │   ├── _float.scss [no-edit]
 │                   │   ├── _grid.scss [no-edit]
+│                   │   ├── _print.scss [no-edit]
 │                   │   └── mixins/
 │                   │       ├── _utility.scss [no-edit]
 │                   │       └── _grid-system.scss [no-edit]
@@ -274,6 +275,7 @@ s3-template/
                         └── _core.scss （cssのリセットやノーマライズの設定を記載している場所）
                         └── _float.scss （フロートシステムの設定を記載している場所）
                         └── _grid.scss （グリッドシステムの設定を記載している場所）
+                        └── _print.scss （プリント時の設定を記載している場所）
 ```
 
 ## コーディングルール
