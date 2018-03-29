@@ -287,6 +287,6 @@ s3-template/
 - [CMS内エディタ用クラスの記述ルール](https://github.com/natrin/s3-template/wiki/CMS%E5%86%85%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E7%94%A8%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E8%A8%98%E8%BF%B0%E3%83%AB%E3%83%BC%E3%83%AB "CMS内エディタ用クラスの記述ルール")
 - [マウスオーバー時の処理](https://github.com/natrin/s3-template/wiki/%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%99%82%E3%81%AE%E5%87%A6%E7%90%86 "マウスオーバー時の処理")
 - [Sass環境を整える](https://github.com/ritaworks/s3-template/wiki/Sass%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B "Sass環境を整える")
-- [Sassの書き方・使い方](https://github.com/natrin/s3-template/wiki/Sass(scss)%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9 "Sassの書き方・使い方")
+- [Sassの書き方・使い方](https://github.com/ritaworks/s3-template/wiki/Sass%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%83%BB%E4%BD%BF%E3%81%84%E6%96%B9 "Sassの書き方・使い方")
 - [Sass運用ルール](https://github.com/natrin/s3-template/wiki/sass%E9%81%8B%E7%94%A8%E3%83%AB%E3%83%BC%E3%83%AB)
 - [CMSを前提としたコーディングの仕方](https://github.com/natrin/s3-template/wiki/CMSを前提としたコーディングの仕方 "CMSを前提としたコーディングの仕方")
