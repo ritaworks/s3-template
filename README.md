@@ -280,7 +280,7 @@ s3-template/
 
 ## コーディングルール
 - [命名ルール](https://github.com/natrin/s3-template/wiki/%E5%91%BD%E5%90%8D%E3%83%AB%E3%83%BC%E3%83%AB "命名ルール")
-- [書式ルール](https://github.com/natrin/s3-template/wiki/%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E6%9B%B8%E5%BC%8F%E3%83%AB%E3%83%BC%E3%83%AB "書式ルール")
+- [書式ルール](https://github.com/ritaworks/s3-template/wiki/%E6%9B%B8%E5%BC%8F%E3%83%AB%E3%83%BC%E3%83%AB "書式ルール")
 - [グリッドシステム、floatクラス](https://github.com/natrin/s3-template/wiki/%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%80%81float%E3%82%AF%E3%83%A9%E3%82%B9 "グリッドシステム、floatクラス")
 - [テンプレートに組み込まれているクラス](https://github.com/natrin/s3-template/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AB%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BE%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9 "テンプレートに組み込まれているクラス")
 - [画像形式・画像の書き出しルール](https://github.com/natrin/s3-template/wiki/%E7%94%BB%E5%83%8F%E5%BD%A2%E5%BC%8F%E3%83%BB%E7%94%BB%E5%83%8F%E3%81%AE%E6%9B%B8%E3%81%8D%E5%87%BA%E3%81%97%E3%83%AB%E3%83%BC%E3%83%AB "画像形式・画像の書き出しルール")
