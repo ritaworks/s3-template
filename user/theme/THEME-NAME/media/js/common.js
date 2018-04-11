@@ -101,3 +101,17 @@ $(function () {
     }
   });
 });
+
+//loading画面用
+$(function () {
+window.onload = function () {
+  $(function () {
+    //setTimeout(function(){
+    $("#loading").fadeOut();
+    $("#wrapper").css({
+      display: "block"
+    }).animate({
+      opacity: "1"
+    }, 2000);
+  });
+}
