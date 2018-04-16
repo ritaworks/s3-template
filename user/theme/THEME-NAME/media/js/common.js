@@ -95,9 +95,21 @@ $(function () {
     if (location.hash != "") {
 	  var pos = $(location.hash).offset().top;
 	  if (PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH) {
-		pos -= $('header').innerHeight();  
+		pos -= $('header').innerHeight();
 	  }
       $("html, body").animate({ scrollTop: pos }, 1, "swing");
     }
   });
+});
+
+//loading画面用
+$(function () {
+  window.onload = function () {
+    $("#loading").fadeOut();
+    $("#wrapper").css({
+      display: "block"
+    }).animate({
+      opacity: "1"
+    }, 2000);
+  }
 });
