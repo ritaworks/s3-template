@@ -110,7 +110,6 @@ select {
   height: 30px;
   color: inherit;
   font: inherit;
-  font-size:14px !important;
   margin: 0;
   padding: 0 20px 0 5px;
   line-height:1;
@@ -187,7 +186,7 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
-  padding: 0;
+  padding: 0 5px 0 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
