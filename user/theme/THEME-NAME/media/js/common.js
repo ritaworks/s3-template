@@ -107,7 +107,7 @@ $(function () {
   window.onload = function () {
     $("#loading").fadeOut();
     $("#wrapper").css({
-      display: "block"
+      visibility: "visible"
     }).animate({
       opacity: "1"
     }, 2000);
