@@ -9,14 +9,19 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <!-- {% SITE_FAVICON %} -->
   <link rel="canonical" href="{% PAGE_FULL_URL %}">
-  <!-- OGP -->
-  <meta property="og:title" content="{% PAGE_FULL_TITLE %}">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="{% DESCRIPTION %}">
-  <meta property="og:url" content="{% PAGE_FULL_URL %}">
-  <meta property="og:image" content="{% SITE_URL %}user/media/THEME-NAME/common/ogp.png">
-  <meta property="og:site_name" content="{% SITE_TITLE %}">
-  <!-- /OGP -->
+  <!-- ↓OGP↓-->
+  <!-- <meta property="og:title" content="{% PAGE_FULL_TITLE %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="{% DESCRIPTION %}" />
+  <meta property="og:url" content="{% PAGE_FULL_URL %}" />
+  {% IS_PAGE_OGP_IMAGE %}
+  <meta property="og:image" content="{% PAGE_OGP_IMAGE_URL %}" />
+  {% /IS_PAGE_OGP_IMAGE %}
+  {% NO_PAGE_OGP_IMAGE %}
+  <meta property="og:image" content="{% SITE_URL %}user/media/THEME-NAME/common/ogp.png" />
+  {% /NO_PAGE_OGP_IMAGE %}
+  <meta property="og:site_name" content="{% SITE_TITLE %}" /> -->
+  <!-- ↑OGP↑ -->
   <link rel="stylesheet" href="user/theme/THEME-NAME/media/css/import.css">
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"> -->
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css"> -->
@@ -24,48 +29,48 @@
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"> -->
   <!-- {% BLOCK NAME='ga' %} -->
 </head>
-  
+
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="user/theme/THEME-NAME/media/js/common.js"></script>
-  
+
   <div id="loading"> <img src="user/media/THEME-NAME/common/loading.gif"> </div>
-  
+
   <!-- LoadingWrapper -->
   <div id="wrapper">
-   
+
     <!-- Container -->
     <div class="l-container">
-     
+
       <!-- Header -->
-      <header>        
+      <header>
       </header>
       <!-- /Header -->
-      
+
       <!-- Main -->
       <div class="l-main">
-       
+
         <!-- Page -->
-        <div class="l-page">          
+        <div class="l-page">
         </div>
         <!-- /Page -->
-        
+
         <!-- Side -->
-        <div class="l-side">          
+        <div class="l-side">
         </div>
         <!-- /Side -->
-        
+
       </div>
       <!-- /Main -->
-      
+
       <!-- Footer -->
-      <footer>        
+      <footer>
       </footer>
       <!-- /Footer -->
-      
+
     </div>
     <!-- /Container -->
-    
+
   </div>
   <!-- LoadingWrapper -->
 </body>
