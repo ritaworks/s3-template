@@ -12,7 +12,7 @@ var isiPhone = (UA.indexOf('iphone') > -1);
 var isAndroid = (UA.indexOf('android') > -1) && (UA.indexOf('mobile') > -1);
 
 function scrollPosition(position) {
-    position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? $('header').innerHeight() : 0;
+  position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? $('header').innerHeight() : 0;
   $('html, body').animate({
     scrollTop: position
   }, SPEED);
@@ -68,11 +68,9 @@ $(function () {
   var menu_open = false;
 
   menu_btn.on('click', function () {
-    console.log($(window).scrollTop());
     if (!menu_open) {
       top = $(window).scrollTop();
     }
-    console.log(top);
     body.toggleClass('open');
     menu_btn.toggleClass('active');
     menu_open = true;
@@ -93,11 +91,14 @@ $(function () {
 $(function () {
   $(document).on('ready', function() {
     if (location.hash != "") {
-	  var pos = $(location.hash).offset().top;
-	  if (PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH) {
-		pos -= $('header').innerHeight();
-	  }
-      $("html, body").animate({ scrollTop: pos }, 1, "swing");
+	    var pos = $(location.hash).offset().top;
+      if (PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH) {
+        pos -= $('header').innerHeight();
+        $("html, body").animate({ scrollTop: pos }, 1, "swing");
+      }
+      else {
+        return false;
+      }
     }
   });
 });
