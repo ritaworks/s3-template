@@ -290,3 +290,4 @@ s3-template/
 - [Sass運用ルール](https://github.com/natrin/s3-template/wiki/sass%E9%81%8B%E7%94%A8%E3%83%AB%E3%83%BC%E3%83%AB)
 - [CMSを前提としたコーディングの仕方](https://github.com/natrin/s3-template/wiki/CMSを前提としたコーディングの仕方 "CMSを前提としたコーディングの仕方")
 - [CMS内エディタ用クラスの記述ルール](https://github.com/natrin/s3-template/wiki/CMS%E5%86%85%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E7%94%A8%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E8%A8%98%E8%BF%B0%E3%83%AB%E3%83%BC%E3%83%AB "CMS内エディタ用クラスの記述ルール")
+- [リンク設定](https://github.com/ritaworks/s3-template/wiki/%E3%83%AA%E3%83%B3%E3%82%AF%E8%A8%AD%E5%AE%9A "リンク設定")
