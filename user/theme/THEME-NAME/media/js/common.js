@@ -3,14 +3,6 @@ var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
 
-var TEL = '0000000000';
-
-var UA = navigator.userAgent.toLowerCase();
-// iPhone
-var isiPhone = (UA.indexOf('iphone') > -1);
-// Android
-var isAndroid = (UA.indexOf('android') > -1) && (UA.indexOf('mobile') > -1);
-
 function scrollPosition(position) {
   position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? $('header').innerHeight() : 0;
   $('html, body').animate({
@@ -51,14 +43,6 @@ $(function () {
       $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
     }
   );
-});
-
-//スマートフォン時のみ電話発信できる様にする（imgタグ用、imgタグに任意のclassを指定する。）
-$(function () {
-  var device = navigator.userAgent;
-  if (isiPhone || isAndroid) {
-    $(".tel").wrap('<a href="tel:'+TEL+'"></a>');
-  }
 });
 
 $(function () {
