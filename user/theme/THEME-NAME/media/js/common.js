@@ -102,15 +102,3 @@ $(function () {
     }
   });
 });
-
-//loading画面用
-$(function () {
-  window.onload = function () {
-    $("#loading").fadeOut();
-    $("#wrapper").css({
-      visibility: "visible"
-    }).animate({
-      opacity: "1"
-    }, 2000);
-  }
-});
