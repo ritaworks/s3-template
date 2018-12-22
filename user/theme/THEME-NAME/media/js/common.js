@@ -3,8 +3,6 @@ var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
 
-var TEL = '0000000000';
-
 var UA = navigator.userAgent.toLowerCase();
 // iPhone
 var isiPhone = (UA.indexOf('iphone') > -1);
@@ -51,14 +49,6 @@ $(function () {
       $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
     }
   );
-});
-
-//スマートフォン時のみ電話発信できる様にする（imgタグ用、imgタグに任意のclassを指定する。）
-$(function () {
-  var device = navigator.userAgent;
-  if (isiPhone || isAndroid) {
-    $(".tel").wrap('<a href="tel:'+TEL+'"></a>');
-  }
 });
 
 $(function () {
