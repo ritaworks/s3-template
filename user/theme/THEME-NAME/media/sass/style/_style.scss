@@ -1,23 +1,5 @@
 @charset "UTF-8";
 // --------------------------------------------------
-// Loading
-// --------------------------------------------------
-#loading{
-  width: 100%;
-  height: 100%;
-  position:absolute;
-  background: #fff;
-  z-index: 9999;
-  @include flex($a-items:center, $j-content:center);
-  @media screen and (max-width: $screen-tb) {
-    display: none;
-  }
-}
-#wrapper{
-  visibility: hidden;
-  opacity:0;
-}
-// --------------------------------------------------
 // Container
 // --------------------------------------------------
 .l-container {
