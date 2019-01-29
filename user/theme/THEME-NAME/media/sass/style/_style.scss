@@ -3,6 +3,10 @@
 // Container
 // --------------------------------------------------
 .l-container {
+  @media screen and (min-width: $screen-pc-min) {
+    min-width: $container-pc;
+    overflow: hidden;
+  }
 }
 
 // --------------------------------------------------
