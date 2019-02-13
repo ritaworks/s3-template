@@ -19,7 +19,27 @@ h5 {
 // --------------------------------------------------
 // Common
 // --------------------------------------------------
+.hover-all {
+  position: relative;
+  >a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
 
+.sp-link {
+  pointer-events: none;
+  color: $base-font-color;
+  text-decoration: none;
+  @media only screen and (max-width: $screen-tb) {
+    pointer-events: all;
+  }
+}
 
 // --------------------------------------------------
 // slide-menu
@@ -56,6 +76,9 @@ body {
   box-sizing: border-box;
   background-color: #fff;
   transition: left 0.3s;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   @media only screen and (min-width: $screen-pc-min) {
     display: none;
   }

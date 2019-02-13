@@ -13,7 +13,7 @@ function scrollPosition(position) {
 //（<a href="#top">の様に記述すると滑らかにスクロールする。）
 $(function () {
   $('a[href*="#"]').click(function () {
-    scrolled = $(window).scrollTop();
+    var scrolled = $(window).scrollTop();
     var position = $(this.hash).length > 0 ? $(this.hash).offset().top : scrolled;
     scrollPosition(position);
   });

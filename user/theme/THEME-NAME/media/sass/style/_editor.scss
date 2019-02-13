@@ -1,6 +1,15 @@
 @charset "UTF-8";
 // CMS内エディタ用クラス
 // 空のクラスはコンパイルされないので回避策として右のコメントを残すように→ /**/
+@mixin button {
+  display: inline-block;
+  text: {
+    align: center;
+    decoration: none;
+  }
+  color: $base-font-color;
+}
+
 .button01 {
   /**/
 }

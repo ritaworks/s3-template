@@ -37,6 +37,22 @@ header {
   }
 }
 
+.h-wrapper {
+  width: $container-pc;
+  @include clearfix;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: 0 $gutter-pc / 2;
+  .h-left {
+    float: left;
+  }
+  .h-right {
+    float: right;
+  }
+}
+
 // --------------------------------------------------
 // Key-visual
 // --------------------------------------------------
