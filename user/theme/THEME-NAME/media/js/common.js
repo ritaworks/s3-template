@@ -73,16 +73,22 @@ $(function () {
 
 //ヘッダーが固定の時スマホの時のページ内リンク用
 $(function () {
-  $(document).on('ready', function() {
+  $(document).on('ready', function () {
     if (location.hash != "") {
-	    var pos = $(location.hash).offset().top;
+      var pos = $(location.hash).offset().top;
       if (PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH) {
         pos -= $('header').innerHeight();
-        $("html, body").animate({ scrollTop: pos }, 1, "swing");
-      }
-      else {
+        $("html, body").animate({
+          scrollTop: pos
+        }, 1, "swing");
+      } else {
         return false;
       }
     }
   });
+});
+
+//object-fit IE対応用
+$(function () {
+  objectFitImages()
 });
