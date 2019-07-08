@@ -1,8 +1,11 @@
 @charset "UTF-8";
+* {
+  letter-spacing: $base-letter-spacing;
+}
+
 body {
   color: $base-font-color;
   font-size: $base-font-size;
-  letter-spacing: $base-letter-spacing;
   font-family: $base-font;
 }
 
