@@ -91,6 +91,9 @@ img {
   border: 0;
   vertical-align: bottom;
   max-width: 100%;
+  &.pdf_icon {
+    vertical-align: middle;
+  }
 }
 
 svg:not(:root) {
