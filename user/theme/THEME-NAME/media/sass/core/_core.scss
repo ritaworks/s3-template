@@ -63,6 +63,15 @@ a:hover {
   outline: 0;
 }
 
+a[href^="tel"] {
+  text-decoration: none;
+  color: $base-font-color;
+
+  @media only screen and (min-width: $screen-pc-min) {
+    pointer-events: none;
+  }
+}
+
 b,
 strong {
   font-weight: bold;
