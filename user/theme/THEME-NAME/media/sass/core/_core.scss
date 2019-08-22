@@ -7,6 +7,7 @@
 * {
   font-size: inherit;
   line-height: inherit;
+  letter-spacing: $base-letter-spacing;
 }
 
 ::before,
@@ -91,6 +92,9 @@ img {
   border: 0;
   vertical-align: bottom;
   max-width: 100%;
+  &.pdf_icon {
+    vertical-align: middle;
+  }
 }
 
 svg:not(:root) {
@@ -309,4 +313,8 @@ h5,
 h6 {
   line-height: normal;
   font-weight: normal;
+}
+
+figure {
+ margin: 0; 
 }

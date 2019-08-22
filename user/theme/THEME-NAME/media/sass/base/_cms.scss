@@ -4,12 +4,15 @@
 @if $light-cms {
   #centerColumn {
     width: $light-cms-column-width;
+    padding-top: 0;
   }
   #leftColumn {
     width: $light-cms-column-width;
+    padding-top: 0;
   }
   #rightColumn {
     width: $light-cms-column-width;
+    padding-top: 0;
   }
   .error {
     color: $warn-color;
