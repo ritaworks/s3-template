@@ -12,9 +12,16 @@ function scrollPosition(position) {
 
 //（<a href="#top">の様に記述すると滑らかにスクロールする。）
 $(function () {
-  $('a[href*="#"]').click(function () {
-    scrolled = $(window).scrollTop();
-    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : scrolled;
+  $('a[href^="#"]').click(function () {
+    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
+    scrollPosition(position);
+    return false;
+  });
+  $('a[href*="html#"]').click(function () {
+    var body = $(document.body);
+    body.removeClass('open');
+    $('.slidemenu-btn').removeClass('active').children('img').attr('src', $('.slidemenu-btn img').attr('src').replace('close', 'menu'));
+    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
     scrollPosition(position);
   });
 });
