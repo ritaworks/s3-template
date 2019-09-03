@@ -1,5 +1,5 @@
-var PC_FIXED = false;
-var SP_FIXED = false;
+var PC_FIXED = true;
+var SP_FIXED = true;
 var SP_WIDTH = 769;
 var SPEED = 500;
 
@@ -22,7 +22,7 @@ $(function () {
     body.removeClass('open');
     $('.slidemenu-btn').removeClass('active');
     //メニューボタンがcssで作れた場合はメニューボタンの画像の入り換えが不要
-    $('.slidemenu-btn').children('img').attr('src', $('.slidemenu-btn img').attr('src').replace('close', 'menu'));
+    //$('.slidemenu-btn').children('img').attr('src', $('.slidemenu-btn img').attr('src').replace('close', 'menu'));
     var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
     scrollPosition(position);
   });
