@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+//objectfit関係　高さの指定が必要
+@mixin object-fit($value: cover) {
+    object-fit: $value;
+}
+
+@mixin object-fit-js($value: 'object-fit:cover') {
+    font-family: $value;
+}
+
+@mixin flex($f-direction: row, $f-wrap: wrap, $j-content: flex-start, $a-items: stretch) {
+    @include f-direction($f-direction);
+    @include f-wrap($f-wrap);
+    @include j-content($j-content);
+    @include a-items($a-items);
+    display: flex;
+}
+
+@mixin objectfit($object-fit: cover, $object-fit-js: 'object-fit:cover') {
+
+    @include object-fit($object-fit);
+    @include object-fit-js($object-fit-js);
+
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: $object-fit;
+        font-family: $object-fit-ie;
+    }
+}
+
+.object-cover {
+    @include object-fit();
+}
+
+.object-contain {
+    @include object-fit($object-fit : contain, $object-fit-js : 'object-fit:contain');
+}
