@@ -9,14 +9,6 @@
     font-family: $value;
 }
 
-@mixin flex($f-direction: row, $f-wrap: wrap, $j-content: flex-start, $a-items: stretch) {
-    @include f-direction($f-direction);
-    @include f-wrap($f-wrap);
-    @include j-content($j-content);
-    @include a-items($a-items);
-    display: flex;
-}
-
 @mixin objectfit($object-fit: cover, $object-fit-js: 'object-fit:cover') {
 
     @include object-fit($object-fit);
