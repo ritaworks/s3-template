@@ -86,3 +86,22 @@ $(function () {
     }
   });
 });
+
+//横幅375px以下のviewportの設定
+$(function () {
+ $(document).on(‘ready’, function () {
+   if ($(window).innerWidth() >= SP_WIDTH && $(window).innerWidth() < 1100) {
+     new ViewportExtra({
+       minWidth: 1100,
+     });
+   } else if ($(window).innerWidth() < 375) {
+     new ViewportExtra({
+       minWidth: 375,
+     });
+   } else {
+     new ViewportExtra ({
+       minWidth: $(window).innerWidth()
+     });
+   }
+ });
+});
