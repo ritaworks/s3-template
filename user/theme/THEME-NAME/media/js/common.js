@@ -2,9 +2,10 @@ var PC_FIXED = false;
 var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
+let headerHeight  = $('header');
 
 function scrollPosition(position) {
-  position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? $('header').innerHeight() : 0;
+  position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? headerHeight.innerHeight() : 0;
   $('html, body').animate({
     scrollTop: position
   }, SPEED);
