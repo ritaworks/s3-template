@@ -100,3 +100,22 @@ $(function () {
     }
   });
 });
+
+//httpが含まれる場合にwordbreakを付与するjs
+//直下のテキストのみを取得するプラグイン
+$.fn.textNodeText = function() {
+  var result = "";
+  $(this).contents().each(function() {
+    if (this.nodeType === 3 && this.data) {
+      result += jQuery.trim( $(this).text() );
+    }
+  });
+  return result;
+};
+//httpが含まれる場合にwordbreakを付与
+$("*").each(function(){
+  var http = $(this).textNodeText();
+  if ( http.match(/http/)) {
+    $(this).css("word-break","break-all");
+  }
+});
