@@ -102,6 +102,9 @@ $(function () {
   });
 });
 
+//横幅375px以下のviewportの設定
+ new ViewportExtra(375)
+
 //httpが含まれる場合にwordbreakを付与するjs
 //直下のテキストのみを取得するプラグイン
 $.fn.textNodeText = function() {
