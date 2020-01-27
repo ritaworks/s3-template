@@ -2,7 +2,7 @@ var PC_FIXED = false;
 var SP_FIXED = false;
 var SP_WIDTH = 769;
 var SPEED = 500;
-let headerHeight  = $('header');
+var headerHeight  = $('header');
 
 function scrollPosition(position) {
   position -= PC_FIXED && $(window).innerWidth() >= SP_WIDTH || SP_FIXED && $(window).innerWidth() < SP_WIDTH ? headerHeight.innerHeight() : 0;
