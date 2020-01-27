@@ -16,6 +16,25 @@ h5 {
   overflow-x: auto;
 }
 
+.nodrop-table {
+  tr {
+
+    th,
+    td {
+      @media only screen and (max-width: $screen-tb) {
+        display: table-cell;
+        width: auto !important;
+      }
+    }
+
+    th {
+      @media only screen and (max-width: $screen-tb) {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 // --------------------------------------------------
 // Common
 // --------------------------------------------------
@@ -40,6 +59,13 @@ a[href^="tel:"] {
   @media only screen and (min-width: $screen-pc-min) {
     pointer-events: none;
   }
+}
+
+//CMS-PDFアイコン設定
+.pdf-icon {
+  vertical-align: middle;
+  height: 16px;
+  padding: 0 5px;
 }
 
 // --------------------------------------------------
