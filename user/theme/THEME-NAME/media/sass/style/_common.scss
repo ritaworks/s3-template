@@ -35,28 +35,6 @@ h5 {
   }
 }
 
-.table-wrapper {
-  @media only screen and (max-width: $screen-tb) {
-    overflow-x: scroll;
-    position: relative;
-    .swipe {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      z-index: 99;
-      display: block;
-      width: 80px;
-      height: 80px;
-      margin: -40px 0px 0px -40px;
-      background: url(../img/swipe.png) no-repeat scroll 0px 0px transparent;
-      background-size: 80px 80px;
-      &.swiping {
-        opacity: 0;
-      }
-    }
-  }
-}
-
 // --------------------------------------------------
 // Common
 // --------------------------------------------------
