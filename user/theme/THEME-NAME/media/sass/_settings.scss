@@ -29,16 +29,25 @@ $screen-sp: 480px;
 $screen-pc-min: ($screen-tb + 1) !default;
 $screen-tb-min: ($screen-sp + 1) !default;
 
-// 基本値の設定
+// 基本値の設定（全ページ共通）
+$base-font: "ヒラギノ角ゴシック ProN", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
 $base-font-color: #333;
+$base-link-color: #0000ee;
+$link-underline: true !default;
+
+// 基本値の設定（トップページ用）
+$top-base-font-size: 14px;
+$top-base-font-size-tb: 12px;
+$top-base-line-height: 1.7;
+$top-base-letter-spacing: 0.04em;
+
+// 基本値の設定（サブページ用）
 $base-font-size: 14px;
 $base-font-size-tb: 12px;
 $base-line-height: 1.7;
-$base-link-color: #0000ee;
-$link-underline: true !default;
 $base-letter-spacing: 0.04em;
 
-$base-font: "ヒラギノ角ゴシック ProN", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+
 
 // --------------------------------------------------
 // グリッドシステム設定
