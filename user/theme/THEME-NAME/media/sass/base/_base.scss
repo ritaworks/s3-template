@@ -1,10 +1,14 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 body {
   color: $base-font-color;
   font-size: $base-font-size;
   font-family: $base-font;
+  &.top {
+    font-size: $top-base-font-size;
+  }
 }
+
 
 p,
 a,
@@ -12,13 +16,17 @@ dt,
 dd,
 li,
 th,
-td
- {
+td {
   line-height: $base-line-height;
+  body.top & {
+    line-height: $top-base-line-height;
+  }
 }
+
 
 a {
   @include link;
+
   color: $base-link-color;
   &:hover {
     color: $base-link-color;
@@ -29,6 +37,9 @@ a {
   @media only screen and (max-width: $screen-tb) {
     body {
       font-size: $base-font-size-tb;
+      &.top {
+        font-size: $top-base-font-size-tb;
+      }
     }
   }
 }
