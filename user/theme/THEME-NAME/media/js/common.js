@@ -13,9 +13,23 @@ function scrollPosition(position) {
 
 //（<a href="#top">の様に記述すると滑らかにスクロールする。）
 $(function () {
-  $('a[href*="#"]').click(function () {
-    scrolled = $(window).scrollTop();
-    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : scrolled;
+  var body = $(document.body);
+  var menu_btn = $('.slidemenu-btn');
+
+  $('a[href^="#"]:not(.tab)').on('click', function (e) {
+    e.preventDefault();
+    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
+    scrollPosition(position);
+  });
+
+  $('a.tab').on('click', function (e) {
+    return false;
+  });
+
+  $('a[href*=".html#"]').on('click', function () {
+    body.removeClass('open');
+    menu_btn.removeClass('active');
+    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
     scrollPosition(position);
   });
 });
@@ -87,4 +101,26 @@ $(function () {
       }
     }
   });
+});
+
+//横幅375px以下のviewportの設定
+ new ViewportExtra(375)
+
+//httpが含まれる場合にwordbreakを付与するjs
+//直下のテキストのみを取得するプラグイン
+$.fn.textNodeText = function() {
+  var result = "";
+  $(this).contents().each(function() {
+    if (this.nodeType === 3 && this.data) {
+      result += jQuery.trim( $(this).text() );
+    }
+  });
+  return result;
+};
+//httpが含まれる場合にwordbreakを付与
+$("*").each(function(){
+  var http = $(this).textNodeText();
+  if ( http.match(/http/)) {
+    $(this).css("word-break","break-all");
+  }
 });
