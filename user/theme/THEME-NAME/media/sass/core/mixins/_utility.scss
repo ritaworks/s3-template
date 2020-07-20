@@ -27,7 +27,7 @@ $align: left, right, center;
 //余白クラス作成
 @mixin spaceloop($sufix: "") {
   $i: 0;
-  @while $i <= 120 {
+  @while $i <= 200 {
     @each $class, $style in $spacer {
       .#{$class}#{$i}#{$sufix} {
         #{$style}: #{$i}px !important;
