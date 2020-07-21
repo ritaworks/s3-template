@@ -1,3 +1,28 @@
+/*
+
+使い方例 :
+
+※例：ページャーある時
+
+<ul class="news-list">
+    <li class="item"><a data-href="#news">すべて</a></li>
+</ul>
+
+<div id="news">
+    <ul class="news-list">
+        <li>hogehoge</li>
+    </ul>
+    <div class="page">
+        ページャーのURLの後ろに 該当の id名　+ tab をつける
+        <a href="{% CURRENT_PAGER_URL %}#newstab">
+    </div>
+</div>
+
+$('.news-list')tab({ 'pager' : true });
+
+*/
+
+
 (function($) {
   $.fn.tab = function(params) {
 
@@ -74,7 +99,7 @@
       var urlHash = location.hash;
       var target_id = urlHash.slice(0, -3);
       if (urlHash.slice(-3) == 'tab') {
-        $('.news-tab').find('a').each(function() {
+        tab_link.find('a').each(function() {
           var target = $(this).attr('data-href');
           $(this).removeClass('current');
           if (target == target_id) {
