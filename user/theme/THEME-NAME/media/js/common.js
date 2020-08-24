@@ -16,7 +16,7 @@ $(function () {
   var body = $(document.body);
   var menu_btn = $('.slidemenu-btn');
 
-  $('a[href*="#"]').on('click', function (e) {
+  $('a[href*="#"]:not(.tab)').on('click', function (e) {
     var current = $(location).attr('pathname')
     var link = $(this).attr('href').split('#')[0];
     var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
