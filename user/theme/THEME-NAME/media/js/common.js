@@ -20,14 +20,13 @@ $(function () {
     var current = $(location).attr('pathname')
     var link = $(this).attr('href').split('#')[0];
     var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
-    if (current === link) {
+    if (current === link || link == "") {
       e.preventDefault();
       menu_btn.removeClass('active');
       body.removeClass('open');
+      body.removeAttr('style');
       scrollPosition(position);
-    } else {
-      scrollPosition(position);
-    }
+    } 
   });
 });
 
