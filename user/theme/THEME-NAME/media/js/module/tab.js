@@ -29,25 +29,21 @@ $('.news-list')tab({ 'pager' : true });
     var defs = {
       position: 0,
       pager: false,
-      pcMinWidth: 769,
-      tbMaxWidth: 768,
-      spMaxWidth: 480,
-      pcHeaderFixed: 0,
-      tbHeaderFixed: 0,
-      spHeaderFixed: 0
+      PC_WIDTH: 769,
+      SP_WIDTH: 768,
+      PC_FIXED: 0,
+      SP_FIXED: 0
     };
     var config = $.extend({}, defs, params);
     var tab_link = this;
     var params_positon = config.position;
     var tabHash = location.hash;
 
-    //pc tb sp
-    if(window.matchMedia( "(min-width: "+config.pcMinWidth+"px)" ).matches) {
-      var headerFixed = config.pcHeaderFixed;
-    } else if(window.matchMedia( "(max-width: "+config.tbMaxWidth+"px)" ).matches) {
-      var headerFixed = config.tbHeaderFixed;
-    } else if(window.matchMedia( "(max-width: "+config.spMaxWidth+"px)" ).matches) {
-      var headerFixed = config.spHeaderFixed;
+    //pc sp
+    if(window.matchMedia( "(min-width: "+config.PC_WIDTH+"px)" ).matches) {
+      var headerFixed = config.PC_FIXED;
+    } else if(window.matchMedia( "(max-width: "+config.SP_WIDTH+"px)" ).matches) {
+      var headerFixed = config.SP_FIXED;
     }
 
     tab_link.find('a').each(function() {
@@ -58,7 +54,7 @@ $('.news-list')tab({ 'pager' : true });
         $($(this).attr('data-href')).css("display", "none");
         tab_target = $(this).find('a').attr('data-href');
         if (tabHash == $(this).attr('data-href')) {
-          $('html, body').hide();
+          $('html, body').css('opacity', 0);
           $(this).closest(tab_link).find('a').each(function() {
             $($(this).attr('data-href')).css("display", "none");
             $(this).removeClass('current');
@@ -66,13 +62,10 @@ $('.news-list')tab({ 'pager' : true });
           $(tabHash).css("display", "block");
           $(this).addClass('current');
           $(window).on("load", function() {
-            $('html, body').show().scrollTop(0);
-            var position = tab_link.outerHeight(true);
             var offset = tab_link.offset().top;
             params_positon = offset - params_positon - headerFixed
-            $('html, body').animate({
-              scrollTop: params_positon,
-              easing: 'swing'
+            $('html, body').animate({scrollTop: params_positon}, 0, function(){
+                $('html, body').css('opacity', 1);
             });
           });
           return false;
