@@ -120,3 +120,8 @@ $("*").each(function(){
     $(this).css("word-break","break-all");
   }
 });
+//youtubeの自動レスポンシブ対応
+//iframeタグの親要素に、divタグが追加される
+$(function(){
+	$('iframe[src*="youtube"]').wrap('<div class="youtube-wrap"></div>');
+});
