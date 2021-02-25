@@ -4,9 +4,6 @@ body {
   color: $base-font-color;
   font-size: $base-font-size;
   font-family: $base-font;
-  &.top {
-    font-size: $top-base-font-size;
-  }
 }
 
 
@@ -18,9 +15,6 @@ li,
 th,
 td {
   line-height: $base-line-height;
-  body.top & {
-    line-height: $top-base-line-height;
-  }
 }
 
 
@@ -37,9 +31,6 @@ a {
   @media only screen and (max-width: $screen-tb) {
     body {
       font-size: $base-font-size-tb;
-      &.top {
-        font-size: $top-base-font-size-tb;
-      }
     }
   }
 }
