@@ -8,9 +8,6 @@
   font-size: inherit;
   line-height: inherit;
   letter-spacing: $base-letter-spacing;
-  body.top & {
-    letter-spacing: $top-base-letter-spacing;
-  }
 }
 
 ::before,
