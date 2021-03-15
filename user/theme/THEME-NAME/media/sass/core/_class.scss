@@ -40,22 +40,6 @@ $align-items: (
 // font-weightのクラス
 @include fontweight();
 
-// リンクテキストクラス作成
-.link {
-  @if $link-underline {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  @else {
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
 // クリアフィックス
 .clearfix {
   @include clearfix;
