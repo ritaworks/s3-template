@@ -114,13 +114,11 @@ $.fn.textNodeText = function() {
   return result;
 };
 //httpが含まれる場合にwordbreakを付与
-$(function () {
-  $("*").each(function () {
-    var http = $(this).textNodeText();
-    if (http.match(/http/)) {
-      $(this).css("word-break", "break-all");
-    }
-  });
+$("*").each(function () {
+  var http = $(this).textNodeText();
+  if (http.match(/http/)) {
+    $(this).css("word-break", "break-all");
+  }
 });
 
 //youtubeの自動レスポンシブ対応
