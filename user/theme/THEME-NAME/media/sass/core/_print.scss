@@ -6,3 +6,8 @@
     display: none !important;
   }
 }
+header {
+       @media only print {
+           position: inherit;
+    }
+}
