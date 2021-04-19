@@ -6,3 +6,14 @@
     display: none !important;
   }
 }
+
+header {
+  @if $header-fixed-pc {
+       position: fixed;
+//ここから
+       @media only print {
+           position: inherit;
+    }
+//ここまで
+  }
+}
