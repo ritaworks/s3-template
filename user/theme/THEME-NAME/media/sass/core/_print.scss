@@ -9,6 +9,10 @@
 
 header {
   @media only print {
-    position: inherit;
+    position: inherit !important;
   }
+}
+
+.l-container {
+  overflow: visible !important;
 }
