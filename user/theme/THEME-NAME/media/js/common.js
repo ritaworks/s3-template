@@ -79,7 +79,7 @@ $(function () {
   );
 });
 
-//ヘッダーが固定の時スマホの時のページ内リンク用
+//アンカーリンク付きのページ遷移をするとき：ヘッダーが固定分調整するjs
 $(function () {
   $(document).on('ready', function () {
     if (location.hash != "") {
