@@ -67,18 +67,6 @@ $(function () {
   });
 });
 
-// rollover（_offと末尾についた画像をオンマウスで_onとついた画像に切り替える）
-$(function () {
-  $('img').hover(
-    function () {
-      $(this).attr('src', $(this).attr('src').replace('_off.', '_on.'));
-    },
-    function () {
-      $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
-    }
-  );
-});
-
 //アンカーリンク付きのページ遷移をするとき：ヘッダーが固定分調整するjs
 $(function () {
   $(document).on('ready', function () {
@@ -95,6 +83,21 @@ $(function () {
     }
   });
 });
+
+// ※※※※※　スクロール関連ここまで　※※※※※
+
+// rollover（_offと末尾についた画像をオンマウスで_onとついた画像に切り替える）
+$(function () {
+  $('img').hover(
+    function () {
+      $(this).attr('src', $(this).attr('src').replace('_off.', '_on.'));
+    },
+    function () {
+      $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
+    }
+  );
+});
+
 
 //横幅375px以下のviewportの設定
 new ViewportExtra(375)
