@@ -11,57 +11,28 @@ function scrollPosition(position) {
   }, SPEED);
 }
 
-//（<a href="#top">の様に記述すると滑らかにスクロールする。）
 $(function () {
-  var body = $(document.body);
   var menu_btn = $('.slidemenu-btn');
+  var body = $(document.body);
+  var menu_open = false;
 
+  //（<a href="#top">の様に記述すると滑らかにスクロールする。）
   $('a[href*="#"]:not(.tab)').on('click', function (e) {
     var current = $(location).attr('pathname')
     var link = $(this).attr('href').split('#')[0];
-    var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
     if (current === link || link == "") {
       e.preventDefault();
       menu_btn.removeClass('active');
       body.removeClass('open');
       body.removeAttr('style');
+      menu_open = false;
+      var position = $(this.hash).length > 0 ? $(this.hash).offset().top : 0;
       scrollPosition(position);
-    } 
-  });
-});
-
-// 一定量スクロールするとページトップに戻るが表示される（場所等の指定はcommon.scssにて）
-$(function () {
-  var top_btn = $('.pagetop');
-  top_btn.hide();
-  $(window).scroll(function () {
-    $(this).scrollTop() > 100 ? top_btn.fadeIn() : top_btn.fadeOut();
-  });
-
-  top_btn.click(function () {
-    scrollPosition(0);
-    return false;
-  });
-});
-
-// rollover（_offと末尾についた画像をオンマウスで_onとついた画像に切り替える）
-$(function () {
-  $('img').hover(
-    function () {
-      $(this).attr('src', $(this).attr('src').replace('_off.', '_on.'));
-    },
-    function () {
-      $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
     }
-  );
-});
+  });
 
-$(function () {
-  var menu_btn = $('.slidemenu-btn');
-  var body = $(document.body);
+  //スライドメニューの開閉
   var top = 0;
-  var menu_open = false;
-
   menu_btn.on('click', function () {
     if (!menu_open) {
       top = $(window).scrollTop();
@@ -82,7 +53,21 @@ $(function () {
   });
 });
 
-//ヘッダーが固定の時スマホの時のページ内リンク用
+// 一定量スクロールするとページトップに戻るが表示される（場所等の指定はcommon.scssにて）
+$(function () {
+  var top_btn = $('.pagetop');
+  top_btn.hide();
+  $(window).scroll(function () {
+    $(this).scrollTop() > 100 ? top_btn.fadeIn() : top_btn.fadeOut();
+  });
+
+  top_btn.click(function () {
+    scrollPosition(0);
+    return false;
+  });
+});
+
+//アンカーリンク付きのページ遷移をするとき：ヘッダーが固定分調整するjs
 $(function () {
   $(document).on('ready', function () {
     if (location.hash != "") {
@@ -99,8 +84,23 @@ $(function () {
   });
 });
 
+// ※※※※※　スクロール関連ここまで　※※※※※
+
+// rollover（_offと末尾についた画像をオンマウスで_onとついた画像に切り替える）
+$(function () {
+  $('img').hover(
+    function () {
+      $(this).attr('src', $(this).attr('src').replace('_off.', '_on.'));
+    },
+    function () {
+      $(this).attr('src', $(this).attr('src').replace('_on.', '_off.'));
+    }
+  );
+});
+
+
 //横幅375px以下のviewportの設定
- new ViewportExtra(375)
+new ViewportExtra(375)
 
 //httpが含まれる場合にwordbreakを付与するjs
 //直下のテキストのみを取得するプラグイン
