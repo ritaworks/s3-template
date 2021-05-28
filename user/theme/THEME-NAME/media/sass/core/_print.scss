@@ -5,10 +5,12 @@
   .sp {
     display: none !important;
   }
-}
-
-header {
-  @media only print {
-    position: inherit;
+  .l-container {
+    overflow: visible !important;
+  }
+  @if $header-fixed-pc {
+    header {
+      position: inherit !important;
+    }
   }
 }
